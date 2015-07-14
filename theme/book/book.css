@@ -80,6 +80,31 @@ body {
     clear: both;
 }
 
+.sumario {
+    color: #202020;
+    font-size: 1.25em;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    max-width: 42em;
+}
+
+.sumario .sumario-titulo {
+    font-size: 2.1em;
+    font-variant: small-caps;
+    line-height: 1.35;
+    padding: 1em 0;
+}
+
+.sumario ol {
+    list-style-position: inside;
+}
+
+.sumario ol ul {
+    margin: .2em 0 .8em 2em;
+    font-size: .9em;
+    list-style-type: none;
+}
 
 .book .book-body .page-wrapper .page-inner section.normal blockquote {
 	color: #777;

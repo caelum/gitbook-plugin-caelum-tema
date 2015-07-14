@@ -28,6 +28,21 @@
             {% endfor %}
         </div>
     </div>
+    <div class="container sumario" role="navigation">
+        <h2 class="sumario-titulo">Sumário</h2>
+        <ol>
+            {% for chapter in summary.chapters %}
+                <li>
+                    <a href="{{ chapter.htmlPath }}">{{ chapter.title }}</a>
+                    <ul>
+                        {% for section in chapter.sections %}
+                            <li><a href="{{ chapter.htmlPath#section.id }}">{{ section.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+       </ol>
+    </div>
     
 {#
    <div class="book" data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
