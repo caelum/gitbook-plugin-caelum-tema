@@ -1,3 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    width: 100%;
+}
+
+.container {
+    clear: both;
+    margin: 0 auto;
+    max-width: 52.5em;
+    width: 98%;
+}
+
+.intro {
+    position: relative;
+}
+
+.intro .intro-abertura {
+    margin-bottom: 3em;
+    position: relative;
+}
+
+.intro .intro-logos {
+    background-color: #0082c7;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    padding: 1em;
+    text-align: center;
+    width: 15em;
+}
+
+.intro .intro-icone {
+    width: 100%;
+}
+
+.intro .intro-logo {
+    margin: 7% 0;
+    width: 88%;
+}
+
+.intro .intro-titulo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 5.5em;
+    padding-bottom: .3em;
+}
+
+.intro-titulo {
+    color: #202020;
+    font-size: 3em;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+.intro-titulo span {
+    color: #707070;
+    font-size: 60%;
+    display: block;
+    padding-bottom: .5em;
+    padding-right: 7em;
+}
+
+.intro .intro-conteudo p {
+    color: #202020;
+    font-size: 1.25em;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 1em 0;
+    clear: both;
+}
+
+
 .book .book-body .page-wrapper .page-inner section.normal blockquote {
 	color: #777;
 	padding: 15px;

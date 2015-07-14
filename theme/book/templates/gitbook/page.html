@@ -14,7 +14,23 @@
 {% block description %}{% if progress.current.level == "0" %}{{ description }}{% endif %}{% endblock %}
 
 {% block content %}
-    <div class="book" data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
+    <div class="container intro">
+        <div class="intro-abertura">
+            <div class="intro-logos">
+                <img src="http://www.caelum.com.br//sprite/base/FJ-11.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                <img src="http://www.caelum.com.br//imagens/apostilas-abertas/caelum-logo-branco.svg" alt="" class=intro-logo onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+            </div>
+            <h1 class="intro-titulo"><span>{{title}}</span> {{description}}</h1>
+        </div>
+        <div class="intro-conteudo">
+            {% for introSection in options.intro %}
+                {% autoescape false %}{{ introSection.content }}{% endautoescape %}
+            {% endfor %}
+        </div>
+    </div>
+    
+{#
+   <div class="book" data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
     {% include "includes/summary.html" %}
     <div class="book-body">
         <div class="body-inner">
@@ -23,17 +39,10 @@
                 <div class="page-inner">
                 {% block page_inner %}
                 {% for section in content %}
-                	{% if options.coverURL %}
-                        <img class="logo" src="{{ options.coverURL }}" />
-                    {% endif %}
                     <section class="{{ section.type }}" id="section-{{ section.id }}">
                        <h1 class="book-chapter">{{progress.current.title}}</h1>
                     {% if section.type == "normal" %}
                         {% autoescape false %}{{ section.content }}{% endautoescape %}
-                    {% elif section.type == "exercise" %}
-                        {% include "./includes/exercise.html" with {section: section} %}
-                    {% elif section.type == "quiz" %}
-                        {% include "./includes/quiz.html" with {section: section} %}
                     {% endif %}
                     </section>
                 {% endfor %}
@@ -42,31 +51,10 @@
             </div>
         </div>
 
-        {% if progress.current.prev and progress.current.prev.path %}
-        <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="navigation navigation-prev {% if !progress.current.next or !progress.current.next.path %}navigation-unique{% endif %}" aria-label="Previous page: {{ progress.current.prev.title }}"><i class="fa fa-angle-left"></i></a>
-        {% endif %}
-        {% if progress.current.next and progress.current.next.path %}
-        <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="navigation navigation-next {% if !progress.current.prev or !progress.current.prev.path %}navigation-unique{% endif %}" aria-label="Next page: {{ progress.current.next.title }}"><i class="fa fa-angle-right"></i></a>
-        {% endif %}
     </div>
 </div>
-{% endblock %}
+#}
 
-{% block javascript %}
-<script src="{{ staticBase }}/app.js"></script>
-{% for resource in plugins.resources.js %}
-    {% if resource.url %}
-    <script src="{{ resource.url }}"></script>
-    {% else %}
-    <script src="{{ staticBase }}/plugins/{{ resource.path }}"></script>
-    {% endif %}
-{% endfor %}
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {% autoescape false %}{{ pluginsConfig }}{% endautoescape %};
-    gitbook.start(config);
-});
-</script>
 {% endblock %}
 
 {% block style %}
