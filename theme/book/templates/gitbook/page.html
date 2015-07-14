@@ -14,61 +14,123 @@
 {% block description %}{% if progress.current.level == "0" %}{{ description }}{% endif %}{% endblock %}
 
 {% block content %}
-    <div class="container intro">
-        <div class="intro-abertura">
-            <div class="intro-logos">
-                <img src="http://www.caelum.com.br//sprite/base/FJ-11.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
-                <img src="http://www.caelum.com.br//imagens/apostilas-abertas/caelum-logo-branco.svg" alt="" class=intro-logo onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+    {% if progress.current.level == 0 %}
+        <div class="container intro">
+            <div class="intro-abertura">
+                <div class="intro-logos">
+                    <img src="http://www.caelum.com.br//sprite/base/FJ-11.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                    <img src="http://www.caelum.com.br//imagens/apostilas-abertas/caelum-logo-branco.svg" alt="" class=intro-logo onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                </div>
+                <h1 class="intro-titulo"><span>{{title}}</span> {{description}}</h1>
             </div>
-            <h1 class="intro-titulo"><span>{{title}}</span> {{description}}</h1>
-        </div>
-        <div class="intro-conteudo">
-            {% for introSection in options.intro %}
-                {% autoescape false %}{{ introSection.content }}{% endautoescape %}
-            {% endfor %}
-        </div>
-    </div>
-    <div class="container sumario" role="navigation">
-        <h2 class="sumario-titulo">Sumário</h2>
-        <ol>
-            {% for chapter in summary.chapters %}
-                <li>
-                    <a href="{{ chapter.htmlPath }}">{{ chapter.title }}</a>
-                    <ul>
-                        {% for section in chapter.sections %}
-                            <li><a href="{{ chapter.htmlPath#section.id }}">{{ section.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            {% endfor %}
-       </ol>
-    </div>
-    
-{#
-   <div class="book" data-level="{{ progress.current.level }}" data-basepath="{{ basePath }}" data-revision="{{ revision }}">
-    {% include "includes/summary.html" %}
-    <div class="book-body">
-        <div class="body-inner">
-            {% include "includes/header.html" %}
-            <div class="page-wrapper" tabindex="-1">
-                <div class="page-inner">
-                {% block page_inner %}
-                {% for section in content %}
-                    <section class="{{ section.type }}" id="section-{{ section.id }}">
-                       <h1 class="book-chapter">{{progress.current.title}}</h1>
-                    {% if section.type == "normal" %}
-                        {% autoescape false %}{{ section.content }}{% endautoescape %}
-                    {% endif %}
-                    </section>
+            <div class="intro-conteudo">
+                {% for introSection in options.intro %}
+                    {% autoescape false %}{{ introSection.content }}{% endautoescape %}
                 {% endfor %}
-                {% endblock %}
+            </div>
+        </div>
+        <div class="container sumario" role="navigation">
+            <h2 class="sumario-titulo">Sumário</h2>
+            <ol>
+                {% for chapter in summary.chapters %}
+                    <li>
+                        <a href="{{ chapter.htmlPath }}">{{ chapter.title }}</a>
+                        <ul>
+                            {% for section in chapter.sections %}
+                                <li><a href="{{ chapter.htmlPath}}#{{ section.id }}">{{ section.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+           </ol>
+        </div>
+    {% else %}
+        <div class="barra-topo" role="banner">
+            <div class="container barra-container">
+                <div class="sombra"></div>
+                <div>
+                    <a href="http://www.caelum.com.br/" class="logo">
+                        <img src="http://www.caelum.com.br/imagens/apostilas-abertas/caelum-logo-cinza.svg" alt="Caelum" onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                    </a>
+                    <a href="index.html" class="book-title" title="Ir para Capa & Sumário da apostila">{{ description }}</a>
                 </div>
             </div>
         </div>
+       <div class="book" role="main">
+            <div class="book-body">
+                <div class="body-inner">
+                    <div class="page-wrapper" tabindex="-1">
+                        <div class="page-inner">
+                            {% block page_inner %}
+                                {% for section in content %}
+                                    <section class="{{ section.type }}" id="section-{{ section.id }}">
+                                       <h1 class="book-chapter">{{progress.current.title}}</h1>
+                                        {% autoescape false %}{{ section.content }}{% endautoescape %}
+                                    </section>
+                                {% endfor %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-simple container" role="navigation">
+            {% if progress.current.prev and progress.current.prev.path %}
+                <div class="nav-simple-item">
+                    <p class="nav-simple-type">Capítulo anterior:</p>
+                    <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.prev.title }}</span></a>
+                </div>
+            {% endif %}
+            {% if progress.current.next and progress.current.next.path %}
+                <div class="nav-simple-item">
+                    <p class="nav-simple-type">Capítulo anterior:</p>
+                    <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.next.title }}</span></a>
+                </div>
+            {% endif %}
+        </nav>
+    {% endif %}
 
+    <div class="container comunidade">
+        <h2 class="comunidade-chamada">Você encontra a Caelum também em:</h2>
+        <ul class="comunidade-itens">
+            <li class="comunidade-item comunidade-blog">
+                <a href="http://blog.caelum.com.br/">
+                    <span class="sp-comunidade sp-comunidade-blog"></span>
+                    <h3>Blog Caelum</h3>
+                </a>
+            </li>
+            <li class="comunidade-item comunidade-online">
+                <a href="http://www.alura.com.br/" rel="nofollow">
+                    <span class="sp-comunidade sp-comunidade-online"></span>
+                    <h3>Cursos Online</h3>
+                </a>
+            </li>
+            <li class="comunidade-item comunidade-facebook">
+                <a href="http://facebook.com/caelumbr" rel="nofollow">
+                    <span class="sp-comunidade sp-comunidade-facebook"></span>
+                    <h3>Facebook</h3>
+                </a>
+            </li>
+            <li class="comunidade-item comunidade-newsletter">
+                <a href="http://www.caelum.com.br/newsletter">
+                    <span class="sp-comunidade sp-comunidade-newsletter"></span>
+                    <h3>Newsletter</h3>
+                </a>
+            </li>
+            <li class="comunidade-item comunidade-editora">
+                <a href="http://www.casadocodigo.com.br/">
+                    <span class="sp-comunidade sp-comunidade-editora"></span>
+                    <h3>Casa do Código</h3>
+                </a>
+            </li>
+            <li class="comunidade-item comunidade-twitter">
+                <a href="http://twitter.com/caelum" rel="nofollow">
+                    <span class="sp-comunidade sp-comunidade-twitter"></span>
+                    <h3>Twitter</h3>
+                </a>
+            </li>
+       </ul>
     </div>
-</div>
-#}
 
 {% endblock %}
 

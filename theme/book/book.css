@@ -11,6 +11,10 @@ body {
     width: 100%;
 }
 
+a {
+    text-decoration: underline;
+}
+
 .container {
     clear: both;
     margin: 0 auto;
@@ -106,6 +110,374 @@ body {
     list-style-type: none;
 }
 
+.barra-topo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: #fff;
+    line-height: 1;
+}
+
+.barra-topo .container {
+    text-align: center;
+}
+
+.barra-topo .barra-container {
+    background: #fff;
+    line-height: 2.75em;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.barra-topo .sombra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.barra-topo .sombra:after, .barra-topo .sombra:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-box-shadow: 0 0 20px rgba(30,30,30,.3);
+  box-shadow: 0 0 20px rgba(30,30,30,.3);
+  top: 50%;
+  bottom: 2px;
+  left: 20px;
+  right: 20px;
+  -moz-border-radius: 100px / 10px;
+  border-radius: 100px / 10px;
+}
+
+.barra-topo .sombra:after {
+  right: 20px;
+  left: auto;
+  -webkit-transform: skew(8deg) rotate(3deg);
+  -moz-transform: skew(8deg) rotate(3deg);
+  -ms-transform: skew(8deg) rotate(3deg);
+  -o-transform: skew(8deg) rotate(3deg);
+  transform: skew(8deg) rotate(3deg);
+}
+
+.barra-topo .logo {
+    color: #444;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: .4em;
+    width: 7em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.barra-topo .book-title {
+    color: #777;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .875em;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.barra-topo .logo img {
+    width: 100%;
+}
+
+.barra-topo a {
+    text-decoration: none;
+}
+
+.nav-simple {
+    background: #f0f0f0;
+    padding: 1em;
+    margin-bottom: 4em;
+    margin-top: 4em;
+}
+
+.nav-simple:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.nav-simple-item {
+  font-size: 1.25em;
+  line-height: 1.5;
+  text-decoration: none;
+  max-width: 320px;
+  width: 45%;
+}
+
+.nav-simple-item:first-child {
+  float: left;
+  text-align: left;
+}
+
+.nav-simple-item:last-child {
+  float: right;
+  text-align: right;
+}
+
+.nav-simple-type {
+  color: #888;
+  font-size: .7em;
+  padding-bottom: .4em;
+  text-transform: uppercase;
+}
+
+.nav-simple-chapter:visited {
+  color: #551A8B;
+}
+
+.nav-simple-chapter {
+  color: #00E;
+  display: block;
+}
+
+.comunidade {
+  margin-top: 3em;
+}
+
+.comunidade-chamada {
+  color: #222;
+  margin-bottom: 2em;
+}
+.comunidade-chamada {
+  line-height: 1.5;
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
+.comunidade-itens {
+  padding: 0;
+  list-style-type: none;
+  margin-left: -3.3333%;
+  margin-bottom: 3em;
+}
+
+.comunidade-item {
+  background: #555;
+  display: inline-block;
+  position: relative;
+  margin-left: 3.3333%;
+  margin-bottom: 3.3333%;
+  line-height: 110px;
+  height: 110px;
+  width: 30%;
+}
+
+.comunidade-item a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.comunidade-item .sp-comunidade {
+  position: absolute;
+  top: 50%;
+  left: 9%;
+}
+
+.comunidade-item h3 {
+  display: inline-block;
+  line-height: 1.1;
+  vertical-align: middle;
+  font-family: Arial,sans-serif;
+  font-size: 1.9em;
+  font-weight: 400;
+  text-align: right;
+  padding-left: 35%;
+  padding-right: 9%;
+  width: 100%;
+}
+
+.sp-comunidade-blog, .sp-comunidade-editora, .sp-comunidade-facebook, .sp-comunidade-newsletter, .sp-comunidade-online, .sp-comunidade-twitter {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.sp-comunidade-blog:before, .sp-comunidade-editora:before, .sp-comunidade-facebook:before, .sp-comunidade-newsletter:before, .sp-comunidade-online:before, .sp-comunidade-twitter:before {
+  content: '';
+  display: block;
+  float: left;
+}
+
+.sp-comunidade-blog:after, .sp-comunidade-editora:after, .sp-comunidade-facebook:after, .sp-comunidade-newsletter:after, .sp-comunidade-online:after, .sp-comunidade-twitter:after {
+  content: '';
+  display: block;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.comunidade-blog {
+  background-color: #f90;
+}
+
+.comunidade-item .sp-comunidade-blog {
+  margin-top: -37px;
+}
+
+.comunidade-item .sp-comunidade-blog {
+  width: 72px;
+}
+
+.sp-comunidade-blog:before {
+  padding-top: 102.7397%;
+}
+
+/*.svg .sp-comunidade-blog:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…85%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-blog:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/blog.1398375902.png);
+}
+
+.comunidade-online {
+  background-color: #4a4a4a;
+}
+
+.comunidade-item .sp-comunidade-online {
+  margin-top: -35px;
+}
+
+.comunidade-item .sp-comunidade-online {
+  width: 90px;
+}
+
+.sp-comunidade-online:before {
+  padding-top: 80.4597%;
+}
+
+/*.svg .sp-comunidade-online:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…43%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-online:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/online.1398375902.png);
+}
+
+.comunidade-facebook {
+  background-color: #3b5998;
+}
+
+.comunidade-item .sp-comunidade-facebook {
+  margin-top: -37px;
+  left: 14%;
+}
+
+.comunidade-item .sp-comunidade-facebook {
+  width: 42px;
+}
+
+.sp-comunidade-facebook:before {
+  padding-top: 185%;
+}
+
+/*.svg .sp-comunidade-facebook:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…46%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-facebook:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/facebook.1398375902.png);
+}
+
+.comunidade-newsletter {
+  background-color: #f44f0b;
+}
+
+.comunidade-item .sp-comunidade-newsletter {
+  margin-top: -27px;
+  left: 1%;
+}
+
+.comunidade-item .sp-comunidade-newsletter {
+  width: 80px;
+}
+
+.sp-comunidade-newsletter:before {
+  padding-top: 69.6202%;
+}
+
+/*.svg .sp-comunidade-newsletter:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…D%22ccccccccccccccccccccccc%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-newsletter:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/newsletter.1398375902.png);
+}
+
+.comunidade-editora {
+  background-color: #2a2a2a;
+}
+
+.comunidade-item .sp-comunidade-editora {
+  margin-top: -39px;
+  left: 12%;
+}
+
+.comunidade-item .sp-comunidade-editora {
+  width: 62px;
+}
+
+.sp-comunidade-editora:before {
+  padding-top: 129.5081%;
+}
+
+/*.svg .sp-comunidade-editora:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…29%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-editora:after {
+  background-image: url(http://www.caelum.com.br//sprite/comunidade/editora.1398375748.png);
+}
+
+.comunidade-twitter {
+  background-color: #00aced;
+}
+
+.comunidade-item .sp-comunidade-twitter {
+  margin-top: -36px;
+}
+
+.comunidade-item .sp-comunidade-twitter {
+  width: 85px;
+}
+
+.sp-comunidade-twitter:before {
+  padding-top: 81.1111%;
+}
+
+/*.svg .sp-comunidade-twitter:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…0%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-twitter:after {
+  background-image: url(http://www.caelum.com.br//sprite/comunidade/twitter.1398375902.png);
+}
+
+
+
+
+
+
+
 .book .book-body .page-wrapper .page-inner section.normal blockquote {
 	color: #777;
 	padding: 15px;
@@ -135,12 +507,6 @@ body {
     line-height: 1.35;
     padding: 1em 0;
     border-bottom: 0;
-}
-
-.logo {
-    background-color: blue;
-    width: 208px;
-    height: 208px;
 }
 
 :not(span) {
