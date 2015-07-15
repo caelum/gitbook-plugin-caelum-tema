@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:not(span) {
+    font-family: Merriweather,Georgia,serif;
+}
+
 body {
     background: #fff;
     width: 100%;
@@ -475,40 +479,85 @@ a {
 
 
 
-
-
-
-.book .book-body .page-wrapper .page-inner section.normal blockquote {
-	color: #777;
-	padding: 15px;
-	margin: 10px 0 20px 0;
-	border-collapse: collapse;
-	border: 1px solid black;
+.tubaina {
+  color: #202020;
+  font-size: 1.25em;
+  font-weight: 400;
+  font-style: normal;
+  word-wrap: break-word;
+  line-height: 1.6;
+  padding: 8em .5em 0;
+  max-width: 42em;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal p {
-    color: #202020;
-    font-size: 1.25em;
-    font-weight: 400;
-    line-height: 1.6;
-    margin: 1em 0;
-    clear: both;
+.tubaina .chapterHeader {
+  font-size: 1.2em;
+  font-variant: small-caps;
+  font-weight: 400;
+  line-height: 1.25;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal h1 {
-    font-size: 2.1em;
-    margin: .5em 0 1em;
-    border-bottom: 0;
+.tubaina .book-chapter {
+  font-size: 2.1em;
+  margin: .5em 0 1em;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal h2 {
-    font-size: 2.1em;
-    font-variant: small-caps;
-    line-height: 1.35;
-    padding: 1em 0;
-    border-bottom: 0;
+.tubaina .book-chapter + p em {
+  display: block;
+  font-style: italic;
+  text-align: right;
 }
 
-:not(span) {
-    font-family: Merriweather,Georgia,serif;
+.tubaina .book-chapter + p em:after {
+  display: block;
+  text-align: right;
+}
+
+.tubaina p {
+  margin: 1.25em 0;
+  text-align: left;
+  text-indent: 1.25em;
+}
+
+.tubaina ol, .tubaina ul {
+  list-style-position: inside;
+  margin: 1.25em 0;
+}
+
+.tubaina li {
+  margin: 1em 0;
+}
+
+.tubaina h2 {
+  font-size: 1.3em;
+  font-variant: small-caps;
+  line-height: 1.35;
+  padding-top: 1.5em;
+}
+
+.tubaina img {
+  display: block;
+  margin: 1em auto;
+  max-width: 100%;
+}
+
+.tubaina blockquote {
+    border: 1px solid #000;
+    margin: 1.5em 0;
+    padding: 1.1em;
+    display: block;
+}
+
+.tubaina code {
+  font-family: monospace,serif;
+  font-size: 1.15em;
+}
+
+.tubaina pre {
+    font-family: monospace,serif;
+}
+
+.tubaina pre code, .tubaina pre kbd, .tubaina pre pre, .tubaina pre samp, .tubaina pre span {
+  font-family: monospace,serif;
+  font-size: 1em;
 }
