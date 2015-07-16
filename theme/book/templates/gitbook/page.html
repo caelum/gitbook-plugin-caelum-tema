@@ -14,7 +14,7 @@
 {% block description %}{% if progress.current.level == "0" %}{{ description }}{% endif %}{% endblock %}
 
 {% block content %}
-    {% if progress.current.level == 0 %}
+    {% if progress.current.level == undefined %}
         <div class="container intro">
             <div class="intro-abertura">
                 <div class="intro-logos">
@@ -56,28 +56,28 @@
                 </div>
             </div>
         </div>
-    {% endif %}
+        <div class="tubaina container" role="main">
+            {% for section in content %}
+               <h1 class="book-chapter">{{progress.current.title}}</h1>
+                {% autoescape false %}{{ section.content }}{% endautoescape %}
+            {% endfor %}
+        </div>
 
-    <div class="tubaina container" role="main">
-        {% for section in content %}
-           <h1 class="book-chapter">{{progress.current.title}}</h1>
-            {% autoescape false %}{{ section.content }}{% endautoescape %}
-        {% endfor %}
-    </div>
-    <nav class="nav-simple container" role="navigation">
-        {% if progress.current.prev and progress.current.prev.path %}
-            <div class="nav-simple-item">
-                <p class="nav-simple-type">Capítulo anterior:</p>
-                <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.prev.title }}</span></a>
-            </div>
-        {% endif %}
-        {% if progress.current.next and progress.current.next.path %}
-            <div class="nav-simple-item">
-                <p class="nav-simple-type">Próximo capítulo:</p>
-                <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.next.title }}</span></a>
-            </div>
-        {% endif %}
-    </nav>
+        <nav class="nav-simple container" role="navigation">
+            {% if progress.current.prev and progress.current.prev.path %}
+                <div class="nav-simple-item">
+                    <p class="nav-simple-type">Capítulo anterior:</p>
+                    <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.prev.title }}</span></a>
+                </div>
+            {% endif %}
+            {% if progress.current.next and progress.current.next.path %}
+                <div class="nav-simple-item">
+                    <p class="nav-simple-type">Próximo capítulo:</p>
+                    <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.next.title }}</span></a>
+                </div>
+            {% endif %}
+        </nav>
+    {% endif %}
 
     <div class="container comunidade">
         <h2 class="comunidade-chamada">Você encontra a Caelum também em:</h2>
