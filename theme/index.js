@@ -31,7 +31,8 @@ module.exports = {
 		"site:page": "./theme/book/templates/gitbook/page.html",
 		"site:langs": "./theme/book/templates/gitbook/langs.html",
 		"site:glossary": "./theme/book/templates/gitbook/glossary.html"
-	}
+	},
+    pdfOptions: pdfOptions
 };
 
 function obtainExtension(options) {
@@ -42,3 +43,22 @@ function obtainExtension(options) {
 	return extension;
 }
 
+function pdfOptions(){
+    this.options.pdf.customSize = "210x280";
+
+    this.options.pdf.fontSize =  "12";
+
+    this.options.pdf.margin.top =  "56";
+    this.options.pdf.margin.bottom =  "56";
+    this.options.pdf.margin.left =  "56";
+    this.options.pdf.margin.right =  "56";
+
+    this.options.pdf.footerTemplate = "<style>#ebook-footer { border-top: 1px solid black; margin-bottom: 72pt; text-transform: uppercase; font-family: Arial, sans-serif; } #footer-content { margin-top: 12pt; } .section { font-weight: normal; color: dimgray; } .pagenum { font-weight: bold; color: black; } .margem { margin-left: 12pt;  }</style> " +
+        "<div id='ebook-footer'><div id='footer-content'></div></div>" +
+        "<script>var footer = document.getElementById('footer-content'); var page = _PAGENUM_ - 2; if(_PAGENUM_ % 2 != 0){ footer.innerHTML = '<span class=\\'section\\'>_SECTION_</span><span class=\\'pagenum margem\\'>'+page+'</span>'; footer.style.textAlign = 'right'; } else { footer.innerHTML = '<span class=\\'pagenum\\'>'+page+'</span><span class=\\'section margem\\'>_SECTION_</span>'; footer.style.textAlign = 'left'; }</script>";
+
+    this.options.pdf.summary = {
+        headerTemplate: "<p id='ebook-header' style='border-bottom: 1px solid black; margin-top: 36pt;'><span class='odd_page'><span>Caelum</span><span style='float:right'>Sumário</span></span><span class='even_page'><span>Sumário</span><span style='float:right'>Caelum</span></span></p>",
+        footerTemplate: null
+    };
+}

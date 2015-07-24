@@ -1,5 +1,5 @@
 body .page {
-	font-family: serif;
+	font-family: 'MinionPro', 'Minion Pro';
 	font-style: normal;
 	color: black;
 	overflow: hidden;
@@ -48,6 +48,8 @@ body .page img {
 body .page .figcaption {
 	text-align: center;
 	font-size: 0.9em;
+	margin-top: 2em;
+    color: #59595b;
 }
 
 body .page .figure {

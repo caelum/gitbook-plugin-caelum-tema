@@ -1,42 +1,44 @@
 body .page {
-	line-height: 1.8em;
+	line-height: 2em;
 	font-weight: 300;
-	text-align: justify;
+	text-align: left;
 }
 
 body .page h1 {
 	font-weight: normal;
 	line-height: 1.1em;
+    text-transform: uppercase;
 }
 
 body .page h2 {
 	font-size: 16pt;
-	font-weight: bold;
-	font-variant: small-caps;
+	font-weight: normal;
+	font-variant: normal;
+    text-transform: uppercase;
 	line-height: 1.1em;
 	padding: 2px 0 0 0;
-	margin: 1em 0 0.5em 0;
+	margin: 1.3em 0 0.5em 0;
 }
 
 body .page h3 {
-	font-size: 11pt;
+	font-size: 13pt;
 	font-weight: bold;
 	line-height: 1.1em;
 	margin: 20px 0 15px 0;
 }
 
 body .page p {
-	margin: 0;
+	margin: 0.8em 0;
 	border: 0;
-	font-size: 11pt;
+	font-size: 12pt;
 }
 
 body .page ul {
-	font-size: 11pt;
+	font-size: 12pt;
 }
 
 body .page li {
-	font-size: 11pt;
+	font-size: 12pt;
 }
 
 body .page pre {
@@ -44,17 +46,20 @@ body .page pre {
 }
 
 body .page code {
-	font-size: 12px;
+	font-size: 11px;
+	font-family: 'Liberation Mono';
 }
 
-body .page figure {
+body .page .figure {
 	text-align: center;
 	margin-bottom: 3em;
 	page-break-inside: avoid;
 }
 
-body .page figure figcaption {
-	margin-top: 2em;
+body .page .figure .figcaption {
+	margin-top: 0.7em;
+	line-height:0.7em;
+	font-size: 1em;
 }
 
 p ~ p {
@@ -67,11 +72,12 @@ li > p ~ p {
 
 body .page .chapterHeader {
 	font-size: 12pt;
+	font-family: Arial;
 	font-weight: normal;
 	text-align: left;
-	margin-top: 345px!important;
 	page-break-before: always;
 }
+
 body .page .chapterHeader:first-of-type {
 	page-break-before: avoid;
 }
@@ -83,5 +89,5 @@ body .page .chapterHeader:first-of-type {
 .page .book-chapter-1 {
 	font-size: 26pt;
 	font-weight: normal;
-	margin: 0 0 1em 0;
+	margin: 0 0 3cm 0;
 }
