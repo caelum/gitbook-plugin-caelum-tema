@@ -539,6 +539,7 @@ a {
   display: block;
   margin: 1em auto;
   max-width: 100%;
+  width: 100%; /* o max-width pode ser sobreescrito via style */
 }
 
 .tubaina blockquote {
