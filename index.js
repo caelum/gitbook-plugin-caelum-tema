@@ -3,8 +3,7 @@ var theme = require("./theme");
 module.exports = {
     hooks: {
         init: function(){
-			this.options.maxLineLength = 80;
-			theme.pdfOptions.call(this);
+            theme.setOptions.call(this);
         }
     }
     , ebook: theme.ebook
