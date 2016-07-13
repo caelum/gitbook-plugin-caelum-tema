@@ -1,0 +1,298 @@
+
+
+
+
+
+.comunidade {
+  margin-top: 3em;
+}
+
+.comunidade-chamada {
+  color: #222;
+  margin-bottom: 2em;
+}
+.comunidade-chamada {
+  line-height: 1.5;
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
+.comunidade-itens {
+  padding: 0;
+  list-style-type: none;
+  margin-left: -3.3333%;
+  margin-bottom: 3em;
+}
+
+.comunidade-item {
+  background: #555;
+  display: inline-block;
+  position: relative;
+  margin-left: 3.3333%;
+  margin-bottom: 3.3333%;
+  line-height: 110px;
+  height: 110px;
+  width: 30%;
+}
+
+.comunidade-item a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.comunidade-item .sp-comunidade {
+  position: absolute;
+  top: 50%;
+  left: 9%;
+}
+
+.comunidade-item h3 {
+  display: inline-block;
+  line-height: 1.1;
+  vertical-align: middle;
+  font-family: Arial,sans-serif;
+  font-size: 1.9em;
+  font-weight: 400;
+  text-align: right;
+  padding-left: 35%;
+  padding-right: 9%;
+  width: 100%;
+}
+
+.sp-comunidade-blog, .sp-comunidade-editora, .sp-comunidade-facebook, .sp-comunidade-newsletter, .sp-comunidade-online, .sp-comunidade-twitter {
+  display: inline-block;
+  position: relative;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.sp-comunidade-blog:before, .sp-comunidade-editora:before, .sp-comunidade-facebook:before, .sp-comunidade-newsletter:before, .sp-comunidade-online:before, .sp-comunidade-twitter:before {
+  content: '';
+  display: block;
+  float: left;
+}
+
+.sp-comunidade-blog:after, .sp-comunidade-editora:after, .sp-comunidade-facebook:after, .sp-comunidade-newsletter:after, .sp-comunidade-online:after, .sp-comunidade-twitter:after {
+  content: '';
+  display: block;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.comunidade-blog {
+  background-color: #f90;
+}
+
+.comunidade-blog:hover {
+    background-color: #ffa31a
+}
+
+.comunidade-item .sp-comunidade-blog {
+  margin-top: -37px;
+}
+
+.comunidade-item .sp-comunidade-blog {
+  width: 72px;
+}
+
+.sp-comunidade-blog:before {
+  padding-top: 102.7397%;
+}
+
+/*.svg .sp-comunidade-blog:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…85%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-blog:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/blog.png);
+}
+
+.comunidade-online {
+  background-color: #4a4a4a;
+}
+
+.comunidade-online:hover {
+    background-color: #575757
+}
+
+.comunidade-item .sp-comunidade-online {
+  margin-top: -35px;
+}
+
+.comunidade-item .sp-comunidade-online {
+  width: 90px;
+}
+
+.sp-comunidade-online:before {
+  padding-top: 80.4597%;
+}
+
+/*.svg .sp-comunidade-online:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…43%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-online:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/online.png);
+}
+
+.comunidade-facebook {
+  background-color: #3b5998;
+}
+
+.comunidade-facebook:hover {
+    background-color: #4264aa
+}
+
+.comunidade-item .sp-comunidade-facebook {
+  margin-top: -37px;
+  left: 14%;
+}
+
+.comunidade-item .sp-comunidade-facebook {
+  width: 42px;
+}
+
+.sp-comunidade-facebook:before {
+  padding-top: 185%;
+}
+
+/*.svg .sp-comunidade-facebook:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…46%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-facebook:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/facebook.png);
+}
+
+.comunidade-newsletter {
+  background-color: #f44f0b;
+}
+
+.comunidade-newsletter:hover {
+    background-color: #f56123
+}
+
+.comunidade-item .sp-comunidade-newsletter {
+  margin-top: -27px;
+  left: 7%;
+}
+
+.comunidade-item .sp-comunidade-newsletter {
+  width: 70px;
+}
+
+.sp-comunidade-newsletter:before {
+  padding-top: 69.6202%;
+}
+
+/*.svg .sp-comunidade-newsletter:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…D%22ccccccccccccccccccccccc%22%20%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-newsletter:after {
+  background-image: url(http://www.caelum.com.br/sprite/comunidade/newsletter.png);
+}
+
+.comunidade-editora {
+  background-color: #2a2a2a;
+}
+
+.comunidade-editora:hover {
+    background-color: #373737
+}
+
+.comunidade-item .sp-comunidade-editora {
+  margin-top: -39px;
+  left: 7%;
+}
+
+.comunidade-item .sp-comunidade-editora {
+  width: 62px;
+}
+
+.sp-comunidade-editora:before {
+  padding-top: 129.5081%;
+}
+
+/*.svg .sp-comunidade-editora:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…29%22%20%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-editora:after {
+  background-image: url(http://www.caelum.com.br//sprite/comunidade/editora.png);
+}
+
+.comunidade-twitter {
+  background-color: #00aced;
+}
+
+.comunidade-twitter:hover {
+    background-color: #08bbff
+}
+
+.comunidade-item .sp-comunidade-twitter {
+  margin-top: -36px;
+}
+
+.comunidade-item .sp-comunidade-twitter {
+  width: 85px;
+}
+
+.sp-comunidade-twitter:before {
+  padding-top: 81.1111%;
+}
+
+/*.svg .sp-comunidade-twitter:after {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20enco…0%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E');
+}*/
+
+.sp-comunidade-twitter:after {
+  background-image: url(http://www.caelum.com.br//sprite/comunidade/twitter.png);
+}
+
+@media (max-width:53em) {
+    .comunidade-itens {
+        margin-left: -4%
+    }
+    .comunidade-item {
+        margin-left: 4%;
+        width: 46%
+    }
+    .comunidade-chamada,
+    .confirmacao {
+        font-size: 1.8em
+    }
+    .confirmacao {
+        margin-top: .5em
+    }
+    .comunidade-chamada {
+        margin-bottom: 1em
+    }
+}
+
+@media (max-width:34em) {
+    .comunidade-itens {
+        margin-left: 0
+    }
+    .comunidade-item {
+        margin-left: 0;
+        width: 100%
+    }
+    .comunidade-chamada,
+    .confirmacao {
+        font-size: 1.2em
+    }
+    .confirmacao {
+        margin-bottom: .4em
+    }
+}

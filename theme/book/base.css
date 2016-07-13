@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:not(span) {
+    font-family: Merriweather,Georgia,serif;
+}
+
+body,
+html {
+    background: #fff;
+    width: 100%;
+    font-size: 1em!important;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.container {
+    clear: both;
+    margin: 0 auto;
+    max-width: 52.5em;
+    width: 98%;
+}
+
+@media (max-width:60em) {
+    .main-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 98%
+    }
+}
+
+.fullscreen {
+    overflow: auto
+}

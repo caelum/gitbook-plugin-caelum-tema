@@ -1,0 +1,71 @@
+.nav-simple-chapter:hover,
+.nav-simple-item {
+    text-decoration: none
+}
+
+.nav-simple ol,
+.nav-simple ul {
+    list-style-position: inside
+}
+
+.nav-simple {
+    background: #f0f0f0;
+    padding: 1em;
+    margin-bottom: 4em;
+    margin-top: 4em
+}
+
+.nav-simple:after {
+    content: '';
+    display: block;
+    clear: both
+}
+
+.nav-simple-item {
+    font-family: Merriweather, Georgia, serif;
+    font-size: 1.25em;
+    line-height: 1.5;
+    max-width: 320px;
+    width: 45%
+}
+
+.nav-simple-item:first-child {
+    float: left;
+    text-align: left
+}
+
+.nav-simple-item:last-child {
+    float: right;
+    text-align: right
+}
+
+.nav-simple-type {
+    color: #888;
+    font-size: .7em;
+    padding-bottom: .4em;
+    text-transform: uppercase
+}
+
+.nav-simple-chapter {
+    color: #00E;
+    display: block
+}
+
+.nav-simple-chapter:active {
+    color: red
+}
+
+.nav-simple-chapter:visited {
+    color: #551A8B
+}
+
+@media (max-width:37em) {
+    .nav-simple-item {
+        max-width: 100%;
+        width: 100%
+    }
+    .nav-simple-item:last-child {
+        margin-top: 1em;
+        text-align: left
+    }
+}

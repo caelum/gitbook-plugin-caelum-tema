@@ -1,0 +1,137 @@
+.intro-titulo {
+    color: #202020;
+    font-family: Merriweather, Georgia, serif;
+    font-size: 3em;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4
+}
+
+.intro-titulo span {
+    color: #707070;
+    font-size: 60%;
+    display: block;
+    padding-bottom: .5em;
+    padding-right: 7em
+}
+
+.intro {
+    position: relative
+}
+
+.intro .intro-abertura {
+    margin-bottom: 3em;
+    position: relative
+}
+
+.intro .intro-icone {
+    width: 100%
+}
+
+.intro .intro-logo {
+    margin: 7% 0;
+    width: 88%
+}
+
+.intro .intro-logos {
+    background-color: #0082c7;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    padding: 1em;
+    text-align: center;
+    width: 15em
+}
+
+.intro p,
+.sumario {
+    color: #202020;
+    font-family: Merriweather, Georgia, serif;
+    font-weight: 400;
+    line-height: 1.6
+}
+
+.intro .intro-titulo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 5.5em;
+    padding-bottom: .3em;
+    margin: 0;
+}
+
+.intro p {
+    font-size: 1.25em;
+    margin: 1em 0;
+    clear: both
+}
+
+@media (max-width:44em) {
+    .intro-abertura {
+        font-size: 80%
+    }
+}
+
+@media (max-width:34em) {
+    .intro-abertura {
+        font-size: 70%
+    }
+}
+
+@media (max-width:28em) {
+    .intro-abertura {
+        font-size: 60%
+    }
+}
+
+@media (max-width:25em) {
+    .intro-abertura {
+        font-size: 50%
+    }
+}
+
+@media (max-width:22em) {
+    .intro-abertura {
+        font-size: 45%
+    }
+}
+
+@media (max-width:19.5em) {
+    .intro-abertura {
+        font-size: 35%
+    }
+}
+
+.sumario {
+    font-size: 1.25em;
+    font-style: normal;
+    max-width: 42em
+}
+
+.sumario .sumario-titulo {
+    font-size: 2.1em;
+    font-variant: small-caps;
+    line-height: 1.35;
+    padding: 1em 0
+}
+
+.sumario ol {
+    list-style-position: inside
+}
+
+.sumario ol ol {
+    margin: .2em 0 .8em 2em;
+    font-size: .9em
+}
+
+@media (max-width:37em) {
+    .intro p,
+    .sumario {
+        font-size: .9375em
+    }
+}
+
+.comunidade {
+    margin-top: 3em
+}

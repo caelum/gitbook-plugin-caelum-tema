@@ -18,16 +18,16 @@
         <div class="container intro">
             <div class="intro-abertura">
                 <div class="intro-logos">
-                    <img src="http://www.caelum.com.br//sprite/base/FJ-11.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
-                    <img src="http://www.caelum.com.br//imagens/apostilas-abertas/caelum-logo-branco.svg" alt="" class=intro-logo onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                    <img src="http://www.caelum.com.br/sprite/base/{{ options.pluginsConfig['caelum-tema']['sigla_curso'] }}.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                    <img src="http://www.caelum.com.br/imagens/apostilas-abertas/caelum-logo-branco.svg" alt="" class=intro-logo onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
                 </div>
-                <h1 class="intro-titulo"><span>{{title}}</span> {{description}}</h1>
+                <h1 class="intro-titulo"><span>Apostila do Curso {{ options.pluginsConfig['caelum-tema']['sigla_curso'] }}</span> {{title}} </h1>
             </div>
-            <div class="intro-conteudo">
-                {% for introSection in options.intro %}
-                    {% autoescape false %}{{ introSection.content }}{% endautoescape %}
-                {% endfor %}
-            </div>
+            
+            {% for introSection in options.intro %}
+                {% autoescape false %}{{ introSection.content }}{% endautoescape %}
+            {% endfor %}
+
         </div>
         <div class="container sumario" role="navigation">
             <h2 class="sumario-titulo">Sumário</h2>
@@ -35,11 +35,11 @@
                 {% for chapter in summary.chapters %}
                     <li>
                         <a href="{{ chapter.htmlPath }}">{{ chapter.title }}</a>
-                        <ul>
+                        <ol>
                             {% for section in chapter.sections %}
                                 <li><a href="{{ chapter.htmlPath}}#{{ section.id }}">{{ section.title }}</a></li>
                             {% endfor %}
-                        </ul>
+                        </ol>
                     </li>
                 {% endfor %}
            </ol>
@@ -52,7 +52,7 @@
                     <a href="http://www.caelum.com.br/" class="logo">
                         <img src="http://www.caelum.com.br/imagens/apostilas-abertas/caelum-logo-cinza.svg" alt="Caelum" onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
                     </a>
-                    <a href="../index.html" class="book-title" title="Ir para Capa & Sumário da apostila">{{ description }}</a>
+                    <a href="../index.html" class="book-title" title="Ir para Capa & Sumário da apostila">Apostila {{ title }}</a>
                 </div>
             </div>
         </div>

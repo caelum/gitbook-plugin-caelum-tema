@@ -23,6 +23,12 @@ module.exports = {
         assets: "./theme/book",
         css: [
             "book.css",
+            "base.css",
+            "barra.css",
+            "navigation.css",
+            "comunidade.css",
+            "sumario.css",
+            "tubaina.css",
             "hljs.css"
         ]
     },
@@ -42,6 +48,7 @@ function obtainExtension(options) {
 
 function setOptions(){
     this.options.maxLineLength = 80;
+    this.options.pluginsConfig["caelum-tema"]["sigla_curso"] = this.options.pluginsConfig["caelum-tema"]["sigla_curso"] || this.options.bookCode
     pdfOptions.call(this);
 }
 
