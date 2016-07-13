@@ -1,17 +1,66 @@
 {% extends "../layout.html" %}
 
 {% block head %}
-    {% parent %}
     {% if progress.current.next and progress.current.next.path %}
     <link rel="next" href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" />
     {% endif %}
     {% if progress.current.prev and progress.current.prev.path %}
     <link rel="prev" href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" />
     {% endif %}
+    
+    <script>
+        if (location.protocol != "https:" && location.hostname == "www.caelum.com.br")
+            location.href = "https:" + location.href.substring(location.protocol.length);
+
+        document.documentElement.className = 'js ' + (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect ? 'svg ':'no-svg ') + 'ratio' + (!!(devicePixelRatio > 1.3) ? '2x ' : '1x ');
+    </script>
+    
+    <!-- Facebook -->
+    {% if progress.current.level == undefined %}
+        <meta property="og:title" content="Apostila {{title}}">
+    {% else %}
+        <meta property="og:title" content="{{ progress.current.title }} | {{title}}">
+    {% endif %}
+    <meta property="og:image" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/share.png">
+    <meta property="og:site_name" content="Apostilas Caelum">
+    <meta property="fb:app_id" content="140078819399376">
+    
+    <!-- Google+ -->
+    {% if progress.current.level == undefined %}
+        <meta itemprop="name" content="Apostila {{title}}">
+    {% else %}
+        <meta itemprop="name" content="{{ progress.current.title }} | {{title}}">
+    {% endif %}
+    <meta itemprop="image" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/share.png">
+    
+    {% if progress.current.level == undefined %}
+        {% if description %}
+            <meta property="og:description" content="{{ description }}">       
+            <meta itemprop="description" content="{{ description }}"> 
+        {% endif %}    
+        <meta property="fb:url" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/">
+        <link rel="canonical" href="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/">
+    {% else %}
+        <meta property="fb:url" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/{{ progress.current.path }}/">
+        <link rel="canonical" href="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/{{ progress.current.path }}/">
+    {% endif %}
+    
+    <!-- iOS webapp -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="{{ options.pluginsConfig['caelum-tema']['webapp_title'] }}">
+    <link rel="apple-touch-icon" href="/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/share.png">
+    
+    <script>
+    if(("standalone" in navigator) && navigator.standalone){
+        document.documentElement.className += ' ios-webapp'
+    }
+    </script>
 {% endblock %}
 
-{% block title %}{{ progress.current.title }} | {{ title }}{% endblock %}
-{% block description %}{% if progress.current.level == "0" %}{{ description }}{% endif %}{% endblock %}
+{% block title %}
+    {{ progress.current.title }} | {{ title }}
+{% endblock %}
+{% block description %}{% if progress.current.level == undefined %}{{ description }}{% endif %}{% endblock %}
 
 {% block content %}
     {% if progress.current.level == undefined %}
@@ -126,7 +175,7 @@
 {% endblock %}
 
 {% block style %}
-<link rel="stylesheet" href="{{ staticBase }}/style.css">
+<link rel="stylesheet" href="/{{ staticBase }}/style.css">
 {% for resource in plugins.resources.css %}
     {% if resource.url %}
     <link rel="stylesheet" href="{{ resource.url }}">
