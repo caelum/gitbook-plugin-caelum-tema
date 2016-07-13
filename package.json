@@ -13,5 +13,8 @@
     "glob-watcher": "^3.0.0",
     "minimist": "^1.2.0",
     "promised-exec": "^1.0.1"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0"
   }
 }

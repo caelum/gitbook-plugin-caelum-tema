@@ -1,6 +1,7 @@
 {% extends "../layout.html" %}
 
 {% set apostila = options.pluginsConfig['caelum-tema'] %}
+{% set analyticsQueryString = "?utm_source=Apostila_HTML&utm_campaign=" + options.bookCode + "&utm_medium=referral" %}
 
 {% block head %}
     {% if progress.current.next and progress.current.next.path %}
@@ -79,7 +80,7 @@
                 {% autoescape false %}{{ introSection.content }}{% endautoescape %}
             {% endfor %}
             
-            <p>A <strong>Caelum</strong> oferece <a href="http://www.caelum.com.br/cursos">cursos de TI</a> desde 2004 em todo o Brasil. É conhecida por seus cursos nas áreas de <a href="http://www.caelum.com.br/cursos-java/">Java</a>, <a href="http://www.caelum.com.br/cursos-rails/">Ruby</a>, <a href="http://www.caelum.com.br/cursos-mobile/">mobile</a>, <a href="http://www.caelum.com.br/cursos-web-front-end/">front-end</a>, <a href="http://www.caelum.com.br/cursos-dotnet/">.NET</a> e <a href="http://www.caelum.com.br/cursos-agile/">agile</a>, além de <a href="https://www.alura.com.br/">cursos online</a>. Temos diversas <a href="http://www.caelum.com.br/apostilas/">apostilas abertas</a> para download e consulta gratuita. E, se estiver interessado em nossos cursos, não deixe de <a href="http://www.caelum.com.br/contato/" rel="nofollow">entrar em contato</a>.</p>
+            <p>A <strong>Caelum</strong> oferece <a href="http://www.caelum.com.br/cursos/{{analyticsQueryString}}">cursos de TI</a> desde 2004 em todo o Brasil. É conhecida por seus cursos nas áreas de <a href="http://www.caelum.com.br/cursos-java/{{analyticsQueryString}}">Java</a>, <a href="http://www.caelum.com.br/cursos-rails/{{analyticsQueryString}}">Ruby</a>, <a href="http://www.caelum.com.br/cursos-mobile/{{analyticsQueryString}}">mobile</a>, <a href="http://www.caelum.com.br/cursos-web-front-end/{{analyticsQueryString}}">front-end</a>, <a href="http://www.caelum.com.br/cursos-dotnet/{{analyticsQueryString}}">.NET</a> e <a href="http://www.caelum.com.br/cursos-agile/{{analyticsQueryString}}">agile</a>, além de <a href="https://www.alura.com.br/{{analyticsQueryString}}">cursos online</a>. Temos diversas <a href="http://www.caelum.com.br/apostilas/{{analyticsQueryString}}">apostilas abertas</a> para download e consulta gratuita. E, se estiver interessado em nossos cursos, não deixe de <a href="http://www.caelum.com.br/contato/{{analyticsQueryString}}" rel="nofollow">entrar em contato</a>.</p>
 
         </div>
         <div class="container sumario" role="navigation">
@@ -136,13 +137,13 @@
         <h2 class="comunidade-chamada">Você encontra a Caelum também em:</h2>
         <ul class="comunidade-itens">
             <li class="comunidade-item comunidade-blog">
-                <a href="http://blog.caelum.com.br/?utm_source=Apostila_HTML&utm_campaign={{options.bookCode}}&utm_medium=referral">
+                <a href="http://blog.caelum.com.br/{{analyticsQueryString}}">
                     <span class="sp-comunidade sp-comunidade-blog"></span>
                     <h3>Blog Caelum</h3>
                 </a>
             </li>
             <li class="comunidade-item comunidade-online">
-                <a href="http://www.alura.com.br/" rel="nofollow">
+                <a href="http://www.alura.com.br/{{analyticsQueryString}}" rel="nofollow">
                     <span class="sp-comunidade sp-comunidade-online"></span>
                     <h3>Cursos Online</h3>
                 </a>
@@ -154,13 +155,13 @@
                 </a>
             </li>
             <li class="comunidade-item comunidade-newsletter">
-                <a href="http://www.caelum.com.br/newsletter/?utm_source=Apostila_HTML&utm_campaign={{options.bookCode}}&utm_medium=referral">
+                <a href="http://www.caelum.com.br/newsletter/{{analyticsQueryString}}">
                     <span class="sp-comunidade sp-comunidade-newsletter"></span>
                     <h3>Newsletter</h3>
                 </a>
             </li>
             <li class="comunidade-item comunidade-editora">
-                <a href="http://www.casadocodigo.com.br/?utm_source=Apostila_HTML&utm_campaign={{options.bookCode}}&utm_medium=referral">
+                <a href="http://www.casadocodigo.com.br/{{analyticsQueryString}}">
                     <span class="sp-comunidade sp-comunidade-editora"></span>
                     <h3>Casa do Código</h3>
                 </a>
