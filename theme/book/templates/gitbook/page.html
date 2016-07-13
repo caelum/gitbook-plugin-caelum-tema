@@ -1,5 +1,7 @@
 {% extends "../layout.html" %}
 
+{% set apostila = options.pluginsConfig['caelum-tema'] %}
+
 {% block head %}
     {% if progress.current.next and progress.current.next.path %}
     <link rel="next" href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" />
@@ -21,7 +23,7 @@
     {% else %}
         <meta property="og:title" content="{{ progress.current.title }} | {{title}}">
     {% endif %}
-    <meta property="og:image" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/share.png">
+    <meta property="og:image" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/share.png">
     <meta property="og:site_name" content="Apostilas Caelum">
     <meta property="fb:app_id" content="140078819399376">
     
@@ -31,24 +33,24 @@
     {% else %}
         <meta itemprop="name" content="{{ progress.current.title }} | {{title}}">
     {% endif %}
-    <meta itemprop="image" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/share.png">
+    <meta itemprop="image" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/share.png">
     
     {% if progress.current.level == undefined %}
         {% if description %}
             <meta property="og:description" content="{{ description }}">       
             <meta itemprop="description" content="{{ description }}"> 
         {% endif %}    
-        <meta property="fb:url" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/">
-        <link rel="canonical" href="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/">
+        <meta property="fb:url" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/">
+        <link rel="canonical" href="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/">
     {% else %}
-        <meta property="fb:url" content="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/{{ progress.current.path }}/">
-        <link rel="canonical" href="https://www.caelum.com.br/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/{{ progress.current.path }}/">
+        <meta property="fb:url" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/{{ progress.current.path }}/">
+        <link rel="canonical" href="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/{{ progress.current.path }}/">
     {% endif %}
     
     <!-- iOS webapp -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="{{ options.pluginsConfig['caelum-tema']['webapp_title'] }}">
-    <link rel="apple-touch-icon" href="/{{ options.pluginsConfig['caelum-tema']['caelumsite_path'] }}/share.png">
+    <meta name="apple-mobile-web-app-title" content="{{ apostila['webapp_title'] }}">
+    <link rel="apple-touch-icon" href="/{{ apostila['caelumsite_path'] }}/share.png">
     
     <script>
     if(("standalone" in navigator) && navigator.standalone){
@@ -67,17 +69,17 @@
         <div class="container intro">
             <div class="intro-abertura">
                 <div class="intro-logos">
-                    <img src="http://www.caelum.com.br/sprite/base/{{ options.pluginsConfig['caelum-tema']['sigla_curso'] }}.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
+                    <img src="http://www.caelum.com.br/sprite/base/{{ apostila['sigla_curso'] }}.svg" alt="" class=intro-icone onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
                     <img src="http://www.caelum.com.br/imagens/apostilas-abertas/caelum-logo-branco.svg" alt="" class=intro-logo onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
                 </div>
-                <h1 class="intro-titulo"><span>Apostila do Curso {{ options.pluginsConfig['caelum-tema']['sigla_curso'] }}</span> {{title}} </h1>
+                <h1 class="intro-titulo"><span>Apostila do Curso {{ apostila['sigla_curso'] }}</span> {{title}} </h1>
             </div>
             
             {% for introSection in options.intro %}
                 {% autoescape false %}{{ introSection.content }}{% endautoescape %}
             {% endfor %}
             
-            <p>A <strong>Caelum</strong> oferece <a href="http://www.caelum.com.br/cursos?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">cursos de TI</a> desde 2004 em todo o Brasil. É conhecida por seus cursos nas áreas de <a href="http://www.caelum.com.br/cursos-java/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">Java</a>, <a href="http://www.caelum.com.br/cursos-rails/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">Ruby</a>, <a href="http://www.caelum.com.br/cursos-mobile/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">mobile</a>, <a href="http://www.caelum.com.br/cursos-web-front-end/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">front-end</a>, <a href="http://www.caelum.com.br/cursos-dotnet/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">.NET</a> e <a href="http://www.caelum.com.br/cursos-agile/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">agile</a>, além de <a href="https://www.alura.com.br/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">cursos online</a>. Temos diversas <a href="http://www.caelum.com.br/apostilas/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral">apostilas abertas</a> para download e consulta gratuita. E, se estiver interessado em nossos cursos, não deixe de <a href="http://www.caelum.com.br/contato/?utm_source=Apostila_HTML&amp;utm_campaign=FJ-11&amp;utm_medium=referral" rel="nofollow">entrar em contato</a>.</p>
+            <p>A <strong>Caelum</strong> oferece <a href="http://www.caelum.com.br/cursos">cursos de TI</a> desde 2004 em todo o Brasil. É conhecida por seus cursos nas áreas de <a href="http://www.caelum.com.br/cursos-java/">Java</a>, <a href="http://www.caelum.com.br/cursos-rails/">Ruby</a>, <a href="http://www.caelum.com.br/cursos-mobile/">mobile</a>, <a href="http://www.caelum.com.br/cursos-web-front-end/">front-end</a>, <a href="http://www.caelum.com.br/cursos-dotnet/">.NET</a> e <a href="http://www.caelum.com.br/cursos-agile/">agile</a>, além de <a href="https://www.alura.com.br/">cursos online</a>. Temos diversas <a href="http://www.caelum.com.br/apostilas/">apostilas abertas</a> para download e consulta gratuita. E, se estiver interessado em nossos cursos, não deixe de <a href="http://www.caelum.com.br/contato/" rel="nofollow">entrar em contato</a>.</p>
 
         </div>
         <div class="container sumario" role="navigation">
