@@ -22,7 +22,6 @@ module.exports = {
     book : {
         assets: "./theme/book",
         css: [
-            "book.css",
             "base.css",
             "barra.css",
             "navigation.css",
