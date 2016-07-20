@@ -13,10 +13,11 @@
         {{ htmlSnippet("head:end")|default("") }}
     </head>
     <body>
+        
         <script>
             (function(d){
                 var s = d.createElement('script'); s.async = true;
-                s.src = "/script/apostila-aberta.js";
+                s.src = "{{ staticBase }}/plugins/gitbook-plugin-caelum-tema/apostila-aberta.js";
                 var f = d.getElementsByTagName('script')[0]; f.parentNode.appendChild(s, f);
             })(document);
         </script>

@@ -29,6 +29,9 @@ module.exports = {
             "sumario.css",
             "tubaina.css",
             "hljs.css"
+        ],
+        js: [
+            "apostila-aberta.js"
         ]
     },
     templates: {
