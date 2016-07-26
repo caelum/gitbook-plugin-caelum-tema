@@ -22,14 +22,7 @@ module.exports = {
     book : {
         assets: "./theme/book",
         css: [
-            "lead-capture.css",            
-            "base.css",
-            "barra.css",
-            "navigation.css",
-            "comunidade.css",
-            "sumario.css",
-            "tubaina.css",
-            "hljs.css"
+            "apostila-aberta.css"
         ],
         js: [
             "apostila-aberta.js"
