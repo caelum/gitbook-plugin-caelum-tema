@@ -173,9 +173,12 @@
 
 .barra-topo .submenu-sub {
     font-size: .72727273em;
-    font-family: Arial, Verdana, sans-serif;
     line-height: 1.5;
     text-align: left
+}
+
+.barra-topo .submenu-sub *{
+    font-family: Arial, Verdana, sans-serif;
 }
 
 .barra-topo .submenu-sub ul {

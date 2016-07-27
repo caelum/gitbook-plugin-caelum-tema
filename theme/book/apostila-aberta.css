@@ -217,9 +217,11 @@ a {
 
 .barra-topo .submenu-sub {
     font-size: .72727273em;
-    font-family: Arial, Verdana, sans-serif;
     line-height: 1.5;
     text-align: left
+}
+.barra-topo .submenu-sub *{
+    font-family: Arial, Verdana, sans-serif;
 }
 
 .barra-topo .submenu-sub ul {
@@ -1378,4 +1380,110 @@ a {
     .tubaina {
         font-size: .9375em
     }
+}
+
+/*icones.css*/
+
+@font-face {
+	font-family: CaelumApostilas4;
+	src: url(/fonts/CaelumApostilas4.eot);
+	src: url(/fonts/CaelumApostilas4.eot?#iefix) format('embedded-opentype'),url(/fonts/CaelumApostilas4.woff) format('woff'),url(/fonts/CaelumApostilas4.ttf) format('truetype'),url(/fonts/CaelumApostilas4.svg#CaelumApostilas4) format('svg');
+	font-weight: 400;
+	font-style: normal
+}
+
+.icone-CS-14:before,.icone-FJ-11:before,.icone-FJ-16:before,.icone-FJ-21:before,.icone-FJ-22:before,.icone-FJ-28:before,.icone-FN-13:before,.icone-RR-71:before,.icone-WD-43:before,.icone-browser:before,.icone-caelum-logo:before,.icone-facebook:before,.icone-house:before,.icone-install:before,.icone-list:before,.icone-plus:before,.icone-search:before,.icone-star:before {
+	font-family: CaelumApostilas4;
+	speak: none;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.icone-CS-14+.ir,.icone-FJ-11+.ir,.icone-FJ-16+.ir,.icone-FJ-21+.ir,.icone-FJ-22+.ir,.icone-FJ-28+.ir,.icone-FN-13+.ir,.icone-RR-71+.ir,.icone-WD-43+.ir,.icone-browser+.ir,.icone-caelum-logo+.ir,.icone-facebook+.ir,.icone-house+.ir,.icone-install+.ir,.icone-list+.ir,.icone-plus+.ir,.icone-search+.ir,.icone-star+.ir {
+	display: none
+}
+
+.icone-house:before {
+	content: "\e000"
+}
+
+.icone-list:before {
+	content: "\e001"
+}
+
+.icone-facebook:before {
+	content: "\e003"
+}
+
+.icone-star:before {
+	content: "\e004"
+}
+
+.icone-plus:before {
+	content: "\e005"
+}
+
+.icone-install:before {
+	content: "\e006"
+}
+
+.icone-browser:before {
+	content: "\e002"
+}
+
+.icone-search:before {
+	content: "\e007"
+}
+
+.icone-caelum-logo:before {
+	content: "\e008"
+}
+
+.icone-RR-71:before {
+	content: "\e00e"
+}
+
+.icone-FJ-16:before,.icone-FJ-22:before {
+	content: "\e00c"
+}
+
+.icone-WD-43:before {
+	content: "\e00a"
+}
+
+.icone-CS-14:before {
+	content: "\e00b"
+}
+
+.icone-FJ-11:before {
+	content: "\e00d"
+}
+
+.icone-FJ-21:before {
+	content: "\e00f"
+}
+
+.icone-FJ-28:before {
+	content: "\e010"
+}
+
+.icone-FN-13:before {
+	content: "\e009"
+}
+
+.icone-caelum-logo {
+	display: inline-block;
+	line-height: 1;
+	vertical-align: middle;
+	font-size: 7.5em;
+	height: .31251251em
+}
+
+.icone-caelum-logo.big {
+	font-size: 12.5em
 }

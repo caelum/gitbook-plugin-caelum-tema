@@ -2,11 +2,100 @@
     <div class="container barra-container">
         <div class="sombra"></div>
         <div>
+            {% if progress.current.level != undefined %}
             <a href="http://www.caelum.com.br/" class="logo">
                 <img src="http://www.caelum.com.br/imagens/apostilas-abertas/caelum-logo-cinza.svg" alt="Caelum" onerror="this.src=this.src.replace('.svg', '.png'); this.onerror=null">
             </a>
-            <a href="../index.html" class="book-title" title="Ir para Capa & Sumário da apostila">Apostila {{ title }}</a>
-            
+            <a href="../index.html" class="book-title" title="Ir para Capa e Sumário da apostila">Apostila {{ title }}</a>
+            {% endif %}
+            <div class="menu-mais">
+                <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.caelum.com.br%2F{{ apostila['caelumsite_path'] }}%2F" class="share" rel="nofollow" title="Compartilhar no Facebook">
+                    <span aria-hidden="true" class="icone-facebook"></span>
+                    <span class="ir">Compartilhar apostila {{ apostila['sigla_curso'] }} no Facebook</span>
+                </a>
+                <div class="config">
+                    <span aria-hidden="true" class="icone-list icone" title="Opções"></span>
+                    <span tabindex="0" class="ir">Opções</span>
+
+                    <div class="submenu">
+
+                        <section class="submenu-sub">
+                            <h3 class="submenu-divisor submenu-label">Navegação</h3>
+
+                            <ul>
+                                <li>
+                                    <a href="../index.html" title="Ir para Capa e Sumário da apostila" class="submenu-link">
+                                        <span aria-hidden="true" class="icone icone-house"></span>
+                                        <span>Capa &amp; Sumário</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <form>
+                                        <label for="chapter-nav-select" id="chapter-nav-label" class="submenu-label">Capítulos</label>
+                                        <select class="chapter-nav" title="Navegue nos capítulos da apostila" id="chapter-nav-select" aria-labeledby="chapter-nav-label">
+                                            <option></option>
+                                            {% for chapter in summary.chapters %}
+                                                <option value="/{{ chapter.path|replace('index.md', '')}}" 
+                                                    {% if capitulo.atual %}selected{% endif %}> 
+                                                    {{ loop.index }}. {{ chapter.title }}
+                                            {% endfor %}
+                                        </select>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form action="/busca/" method="GET">
+                                        <input type="hidden" name="apostila" value="{{ apostila['sigla_curso'] }}">
+                                        <label for="apostila-busca-input" id="apostila-busca-label" class="submenu-label">Busca</label>
+                                        <input type="search" id="apostila-busca-input" aria-labeledby="apostila-busca-label" name="q">
+                                        <button title="Buscar" class="search-form-action">
+                                            <span aria-hidden="true" class="icone-search"></span>
+                                            <span class="ir">Buscar</span>
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="submenu-sub">
+                            <h3 class="submenu-divisor submenu-label">Mais</h3>
+
+                            <ul>
+                                <li>
+                                    <a href="{{ apostila['caelumsite_url_curso'] }}" title="{{title}}" class="submenu-link">
+                                        <span aria-hidden="true" class="icone icone-star"></span>
+                                        <span>Curso Caelum dessa apostila</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.caelum.com.br%2F{{ apostila['caelumsite_path'] }}%2F" rel="nofollow" class="submenu-link">
+                                        <span aria-hidden="true" class="icone icone-facebook"></span>
+                                        <span>Compartilhar no Facebook</span>
+                                    </a>
+                                </li>
+                                <!--<li>
+                                    <a href="../offline/" class="submenu-link">
+                                        <span aria-hidden="true" class="icone icone-browser"></span>
+                                        <span class="novo">Leitura offline</span>
+                                    </a>
+                                </li>-->
+                                <li>
+                                    <a href="http://www.caelum.com.br/apostilas/#{{ apostila['sigla_curso'] }}" title="Baixe em PDF, epub e mobi" class="submenu-link">
+                                        <span aria-hidden="true" class="icone icone-install"></span>
+                                        <span>Download da apostila</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.caelum.com.br/apostilas/" title="Apostilas abertas da Caelum" class="submenu-link">
+                                        <span aria-hidden="true" class="icone icone-plus"></span>
+                                        <span>Outras apostilas abertas</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div><!-- /.menu-mais -->
         </div>
     </div>
 </div>
