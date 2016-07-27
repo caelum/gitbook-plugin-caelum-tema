@@ -23,21 +23,24 @@
                             <h3 class="submenu-divisor submenu-label">Navegação</h3>
 
                             <ul>
+                                {% if progress.current.level != undefined %}
                                 <li>
                                     <a href="../index.html" title="Ir para Capa e Sumário da apostila" class="submenu-link">
                                         <span aria-hidden="true" class="icone icone-house"></span>
                                         <span>Capa &amp; Sumário</span>
                                     </a>
                                 </li>
+                                {% endif %}
                                 <li>
                                     <form>
                                         <label for="chapter-nav-select" id="chapter-nav-label" class="submenu-label">Capítulos</label>
                                         <select class="chapter-nav" title="Navegue nos capítulos da apostila" id="chapter-nav-select" aria-labeledby="chapter-nav-label">
                                             <option></option>
                                             {% for chapter in summary.chapters %}
-                                                <option value="/{{ chapter.path|replace('index.md', '')}}" 
-                                                    {% if capitulo.atual %}selected{% endif %}> 
+                                                <option value="{{ basePath }}/{{ chapter.path|mdLink }}" 
+                                                    {% if progress.current.title == chapter.title %}selected{% endif %}> 
                                                     {{ loop.index }}. {{ chapter.title }}
+                                                </option>
                                             {% endfor %}
                                         </select>
                                     </form>
