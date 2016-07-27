@@ -1,0 +1,14 @@
+<nav class="nav-simple container" role="navigation">
+    {% if progress.current.prev and progress.current.prev.path %}
+        <div class="nav-simple-item">
+            <p class="nav-simple-type">Capítulo anterior:</p>
+            <a href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.prev.title }}</span></a>
+        </div>
+    {% endif %}
+    {% if progress.current.next and progress.current.next.path %}
+        <div class="nav-simple-item">
+            <p class="nav-simple-type">Próximo capítulo:</p>
+            <a href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" class="nav-simple-chapter"><span>{{ progress.current.next.title }}</span></a>
+        </div>
+    {% endif %}
+</nav>

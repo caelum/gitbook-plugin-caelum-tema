@@ -3,11 +3,45 @@
     {{ htmlSnippet("html:start")|default("") }}
     <head>
         {{ htmlSnippet("head:start")|default("") }}
+
+        {% if progress.current.next and progress.current.next.path %}
+        <link rel="next" href="{{ basePath }}/{{ progress.current.next.path|mdLink }}" />
+        {% endif %}
+        {% if progress.current.prev and progress.current.prev.path %}
+        <link rel="prev" href="{{ basePath }}/{{ progress.current.prev.path|mdLink }}" />
+        {% endif %}
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
-        <meta name="description" content="{% block description %}{% endblock %}">       
+        <script>
+            if (location.protocol != "https:" && location.hostname == "www.caelum.com.br")
+                location.href = "https:" + location.href.substring(location.protocol.length);
+
+            document.documentElement.className = 'js ' + (!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect ? 'svg ':'no-svg ') + 'ratio' + (!!(devicePixelRatio > 1.3) ? '2x ' : '1x ');
+        </script>
+        
+        <!-- Facebook -->
+        <meta property="og:title" content="{% block title %}{% endblock %}">
+        <meta property="og:image" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/images/share.png">
+        <meta property="og:site_name" content="Apostilas Caelum">
+        <meta property="fb:app_id" content="140078819399376">
+        
+        <!-- Google+ -->
+        <meta itemprop="name" content="{% block title %}{% endblock %}">
+        <meta itemprop="image" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/images/share.png">
+        
+        <!-- iOS webapp -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="{{ apostila['webapp_title'] }}">
+        <link rel="apple-touch-icon" href="/{{ apostila['caelumsite_path'] }}/images/share.png">
+        
+        <script>
+        if(("standalone" in navigator) && navigator.standalone){
+            document.documentElement.className += ' ios-webapp'
+        }
+        </script>     
         {% block head %}{% endblock %}
         {{ htmlSnippet("head:end")|default("") }}
     </head>
@@ -22,39 +56,11 @@
         </script>
         {{ htmlSnippet("body:start")|default("") }}
         {% block style %}{% endblock %}
+        
         {% block content %}{% endblock %}
 
-
-        <!-- Google remarketing tag -->
-        <script>
-        var google_conversion_id = 995678627;
-        var google_conversion_label = "DYcgCO3T_gMQo7Pj2gM";
-        var google_custom_params = window.google_tag_params;
-        var google_remarketing_only = true;
-        </script>
-        <script src="//www.googleadservices.com/pagead/conversion.js"></script>
-        <noscript>
-        <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt=""
-        src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/995678627/?value=0&amp;label=DYcgCO3T_gMQo7Pj2gM&amp;guid=ON&amp;script=0"/>
-        </div>
-        </noscript>
-
-        <!-- Mailchimp -->
-        <script>
-        var $mcGoal = {'settings':{'uuid':'422bed2b74623ede65048a641','dc':'us1'}};
-        (function() {
-        var sp = document.createElement('script'); sp.type = 'text/javascript'; sp.async = true; sp.defer = true;
-        sp.src = ('https:' == document.location.protocol ? 'https://s3.amazonaws.com/downloads.mailchimp.com' : 'http://downloads.mailchimp.com') + '/js/goal.min.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sp, s);
-        })();
-        </script>
-
-        <!-- RD Station -->
-        <script src="https://d335luupugsy2.cloudfront.net/js/lead-tracking/stable/lead-tracking.min.js"></script>
-        <script>
-        LeadTracking.init({ token: '4b7bbfbbbe5c7e29f1c12ecb3b59096b' });
-        </script>
+        {% include './gitbook/partials/_comunidade.html' %}
+        {% include './gitbook/partials/_trackers.html' %}
         {{ htmlSnippet("body:end")|default("") }}
     </body>
     {{ htmlSnippet("html:end")|default("") }}
