@@ -2,13 +2,11 @@
 
 {% set apostila = options.pluginsConfig['caelum-tema'] %}
 
+{% block title %}{{ progress.current.title }} | {{ title }}{% endblock %}
+
 {% block head %}
     <meta property="fb:url" content="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/{{ progress.current.path|replace('/index.md','') }}/">
     <link rel="canonical" href="https://www.caelum.com.br/{{ apostila['caelumsite_path'] }}/{{ progress.current.path|replace('/index.md','') }}/"> 
-{% endblock %}
-
-{% block title %}
-    {{ progress.current.title }} | {{ title }}
 {% endblock %}
 
 {% block content %}
