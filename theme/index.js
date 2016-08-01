@@ -44,7 +44,8 @@ function obtainExtension(options) {
 
 function setOptions(){
     this.options.maxLineLength = 80;
-    this.options.pluginsConfig["caelum-tema"]["sigla_curso"] = this.options.pluginsConfig["caelum-tema"] && this.options.pluginsConfig["caelum-tema"]["sigla_curso"] || this.options.bookCode
+    this.options.pluginsConfig["caelum-tema"] = this.options.pluginsConfig["caelum-tema"] || {}
+    this.options.pluginsConfig["caelum-tema"]["sigla_curso"] = this.options.pluginsConfig["caelum-tema"]["sigla_curso"] || this.options.bookCode
     pdfOptions.call(this);
 }
 
