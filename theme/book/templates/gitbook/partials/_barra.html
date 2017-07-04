@@ -37,10 +37,19 @@
                                         <select class="chapter-nav" title="Navegue nos capítulos da apostila" id="chapter-nav-select" aria-labeledby="chapter-nav-label">
                                             <option></option>
                                             {% for chapter in summary.chapters %}
-                                                <option value="{{ basePath }}/{{ chapter.path|mdLink }}" 
-                                                    {% if progress.current.title == chapter.title %}selected{% endif %}> 
-                                                    {{ loop.index }}. {{ chapter.title }}
-                                                </option>
+                                                {% if chapter.path == 'README.md' %}
+                                                    <option value="{{ basePath }}/{{ (options.firstChapter + '/index.md') | replace('[0-9]{2}\-(.+)', '$1') | mdLink }}"                                                    
+                                                        {% if progress.current.title == chapter.title %}selected{% endif %}
+                                                    >
+                                                        {{ loop.index }}. {{ chapter.title }}
+                                                    </option>
+                                                {% else %}
+                                                    <option value="{{ basePath }}/{{ chapter.path | mdLink }}"                                                     
+                                                        {% if progress.current.title == chapter.title %}selected{% endif %}
+                                                    >
+                                                        {{ loop.index }}. {{ chapter.title }}
+                                                    </option>
+                                                {% endif %}
                                             {% endfor %}
                                         </select>
                                     </form>

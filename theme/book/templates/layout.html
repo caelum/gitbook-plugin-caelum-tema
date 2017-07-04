@@ -47,13 +47,14 @@
     </head>
     <body>
         
-        <script>
-            (function(d){
-                var s = d.createElement('script'); s.async = true;
-                s.src = "{{ staticBase }}/plugins/gitbook-plugin-caelum-tema/apostila-aberta.js";
-                var f = d.getElementsByTagName('script')[0]; f.parentNode.appendChild(s, f);
-            })(document);
-        </script>
+        {% for resource in plugins.resources.js %}
+            {% if resource.url %}
+                <script async src="{{ resource.url }}"></script>
+            {% else %}
+                <script async src="{{ staticBase }}/plugins/{{ resource.path }}"></script>
+            {% endif %}
+        {% endfor %}
+
         {{ htmlSnippet("body:start")|default("") }}
         {% block style %}{% endblock %}
         
