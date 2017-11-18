@@ -44,6 +44,7 @@ body .page li {
 body .page code {
 	font-size: 13px;
 	font-family: 'Liberation Mono';
+	page-break-inside: avoid;
 }
 
 body .page pre {
