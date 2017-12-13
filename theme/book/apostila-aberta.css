@@ -335,7 +335,7 @@ a {
     vertical-align: middle
 }
 
-@media (max-width:599px) {
+@media (max-width:720px) {
     .barra-topo {
         position: absolute
     }
@@ -364,6 +364,26 @@ a {
 
 .ios-webapp .barra-topo.barra-simples {
     position: absolute
+}
+
+
+.breadcrumb {
+    list-style: none;
+    margin-top: 5em;
+    line-height: 1.5;
+}
+
+.breadcrumb-item {
+    display: inline;
+}
+.breadcrumb-item a {
+    color: #155eff
+}
+
+@media (max-width: 720px) {
+    .breadcrumb {
+        margin-top: 5.5em;
+    }
 }
 
 /*comunidade.css*/
@@ -1124,16 +1144,6 @@ a {
     color: #551A8B
 }
 
-.nav-breadcrumbList {
-    list-style: none;
-    margin-top: 4em;
-    margin-bottom: .25em;
-}
-
-.nav-breadcrumbList-item {
-    display: inline;
-}
-
 @media (max-width:37em) {
     .nav-simple-item {
         max-width: 100%;
@@ -1296,7 +1306,7 @@ a {
   font-style: normal;
   word-wrap: break-word;
   line-height: 1.6;
-  padding: 8em .5em 0;
+  padding: 4em .5em 0;
   max-width: 42em;
 }
 
@@ -1378,6 +1388,7 @@ a {
 
 .tubaina pre {
     font-family: monospace,serif;
+    overflow: auto;
 }
 
 .tubaina pre code, .tubaina pre kbd, .tubaina pre pre, .tubaina pre samp, .tubaina pre span {
