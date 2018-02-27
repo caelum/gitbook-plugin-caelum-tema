@@ -18,10 +18,6 @@ body .page h3 {
 	padding: 0px;
 }
 
-body .page ul {
-	padding-left: 4em;
-}
-
 body .page li > ul {
 	padding-left: 1em;
 }
@@ -37,6 +33,14 @@ body .page pre {
 body .page pre code, body .page code {
 	background-color: white;
 	word-wrap: break-word;
+}
+
+body .page table tr:nth-child(2n) {
+	background-color: white;
+}
+
+body .page table thead tr {
+	background-color: #f8f8f8;
 }
 
 body .page a {
