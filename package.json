@@ -7,12 +7,15 @@
   "engines": {
     "gitbook": ">=1.5.0"
   },
+  "scripts": {
+    "test": "tubaina-plugin-tester"
+  },
   "devDependencies": {
     "bluebird": "^3.3.5",
     "browser-sync": "^2.12.5",
     "glob-watcher": "^3.0.0",
     "minimist": "^1.2.0",
-    "promised-exec": "^1.0.1"
+    "tubaina-plugin-tester": "^1.0.0"
   },
   "dependencies": {
     "cheerio": "^0.20.0"
