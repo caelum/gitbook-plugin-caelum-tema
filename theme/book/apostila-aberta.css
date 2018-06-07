@@ -1406,8 +1406,8 @@ a {
 
 @font-face {
 	font-family: CaelumApostilas4;
-	src: url(/fonts/CaelumApostilas4.eot);
-	src: url(/fonts/CaelumApostilas4.eot?#iefix) format('embedded-opentype'),url(/fonts/CaelumApostilas4.woff) format('woff'),url(/fonts/CaelumApostilas4.ttf) format('truetype'),url(/fonts/CaelumApostilas4.svg#CaelumApostilas4) format('svg');
+	src: url(fonts/CaelumApostilas4.eot);
+	src: url(fonts/CaelumApostilas4.eot?#iefix) format('embedded-opentype'),url(fonts/CaelumApostilas4.woff) format('woff'),url(fonts/CaelumApostilas4.ttf) format('truetype'),url(fonts/CaelumApostilas4.svg#CaelumApostilas4) format('svg');
 	font-weight: 400;
 	font-style: normal
 }

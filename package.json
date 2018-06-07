@@ -10,6 +10,9 @@
   "scripts": {
     "test": "tubaina-plugin-tester"
   },
+  "files": [
+    "theme"
+  ],
   "devDependencies": {
     "bluebird": "^3.3.5",
     "browser-sync": "^2.12.5",
